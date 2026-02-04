@@ -72,8 +72,25 @@ export default function Home() {
       </section>
 
       <footer className="bg-black text-white py-6 text-center">
-        © 2026 Advantage Growth. All rights reserved.
-      </footer>
+  © 2026 Advantage Growth. All rights reserved.
+</footer>
+
+<a
+  href="https://wa.me/917973888374?text=Hi%20I%20am%20interested%20in%20growing%20my%20business"
+  target="_blank"
+  rel="noopener noreferrer"
+  className="fixed bottom-6 right-6 bg-green-500 hover:bg-green-600 text-white p-4 rounded-full shadow-lg z-50"
+  aria-label="Chat on WhatsApp"
+>
+  <svg
+    xmlns="http://www.w3.org/2000/svg"
+    viewBox="0 0 32 32"
+    fill="currentColor"
+    className="w-6 h-6"
+  >
+    <path d="M16 2C8.3 2 2 8.3 2 16c0 2.5.7 4.9 1.9 7l-2 6.1 6.3-2c2 1.1 4.3 1.7 6.8 1.7 7.7 0 14-6.3 14-14S23.7 2 16 2z" />
+  </svg>
+</a>
 
     </main>
   );
