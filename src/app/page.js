@@ -73,7 +73,7 @@ export default function Home() {
         <h2 className="text-4xl font-bold mb-6">Let’s Talk Growth</h2>
 
         <form
-          action="https://formsubmit.co/bgoyal2804@gmail.com"
+          action="https://formsubmit.co/bhavna.advantagegrowth@gmail.com"
           method="POST"
           onSubmit={(e) => {
             e.preventDefault();
