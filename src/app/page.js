@@ -72,10 +72,10 @@ export default function Home() {
       <section id="contact" className="py-20 px-6 text-center bg-white">
         <h2 className="text-4xl font-bold mb-6">Let’s Talk Growth</h2>
 
-        <form
-          action="https://formsubmit.co/bhavna.advantagegrowth@gmail.com"
-          method="POST"
-          onSubmit={(e) => {
+<form
+  action="https://formsubmit.co/bhavna.advantagegrowth@gmail.com"
+  method="POST"
+  onSubmit={(e) => {
             e.preventDefault();
 
             const form = e.target;
