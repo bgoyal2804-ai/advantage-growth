@@ -13,36 +13,30 @@
       const email = form.email.value;
       const message = form.message.value;
 
-      // WhatsApp
+      // Open WhatsApp
       const whatsappMessage = `Hi, I'm ${name}. My email is ${email}. I need help with: ${message}`;
       window.open(
-        `https://wa.me/917973888374?text=${encodeURIComponent(
-          whatsappMessage
-        )}`,
+        `https://wa.me/917973888374?text=${encodeURIComponent(whatsappMessage)}`,
         "_blank"
       );
 
-      // Email (silent)
+      // Send email silently
       fetch(form.action, {
         method: "POST",
         body: new FormData(form),
       });
 
-      // UX feedback
       alert("Thanks! We’ll contact you shortly.");
-
-      // Optional: reset form
       form.reset();
     }}
     className="max-w-xl mx-auto space-y-4"
   >
     {/* FormSubmit config */}
+    <input type="hidden" name="_next" value="https://advantagegrowth.in/#contact" />
     <input type="hidden" name="_subject" value="New Lead – Advantage Growth" />
-    <input type="hidden" name="_replyto" value="email" />
     <input type="hidden" name="_captcha" value="false" />
     <input type="hidden" name="_template" value="table" />
 
-    {/* Inputs */}
     <input
       name="name"
       required
@@ -64,7 +58,7 @@
       placeholder="Tell us about your project"
       className="w-full border p-3 rounded"
       rows="4"
-    ></textarea>
+    />
 
     <button
       type="submit"
