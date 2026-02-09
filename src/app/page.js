@@ -3,25 +3,28 @@
   <h2 className="text-4xl font-bold mb-6">Let’s Talk Growth</h2>
 
   <form
-    action="https://formsubmit.co/bhavna.advantagegrowth@gmail.com"
-    method="POST"
-    onSubmit={(e) => {
-      const form = e.target;
-      const name = form.name.value;
-      const email = form.email.value;
-      const message = form.message.value;
+  action="https://formsubmit.co/bhavna.advantagegrowth@gmail.com"
+  method="POST"
+  onSubmit={(e) => {
+    const form = e.currentTarget; // safer than e.target
+    const name = form.name.value;
+    const email = form.email.value;
+    const message = form.message.value;
 
-      const whatsappMessage = `Hi, I'm ${name}. My email is ${email}. I need help with: ${message}`;
+    const whatsappMessage = `Hi, I'm ${name}. My email is ${email}. I need help with: ${message}`;
 
-      setTimeout(() => {
-        window.open(
-          `https://wa.me/917973888374?text=${encodeURIComponent(whatsappMessage)}`,
-          "_blank"
-        );
-      }, 300);
-    }}
-    className="max-w-xl mx-auto space-y-4"
-  >
+    // Open WhatsApp immediately so pop-up blockers are less likely to block it
+    window.open(
+      `https://wa.me/917973888374?text=${encodeURIComponent(whatsappMessage)}`,
+      "_blank",
+      "noopener,noreferrer"
+    );
+
+    // No e.preventDefault() here
+    // FormSubmit will still submit + redirect to _next automatically
+  }}
+  className="max-w-xl mx-auto space-y-4"
+>
     {/* FormSubmit config */}
     <input type="hidden" name="_captcha" value="false" />
     <input type="hidden" name="_template" value="table" />
