@@ -22,13 +22,21 @@
         "_blank"
       );
 
-      // Email submit
-      form.submit();
+      // Email (silent)
+      fetch(form.action, {
+        method: "POST",
+        body: new FormData(form),
+      });
+
+      // UX feedback
+      alert("Thanks! We’ll contact you shortly.");
+
+      // Optional: reset form
+      form.reset();
     }}
     className="max-w-xl mx-auto space-y-4"
   >
     {/* FormSubmit config */}
-    <input type="hidden" name="_next" value="https://advantagegrowth.in/#contact" />
     <input type="hidden" name="_subject" value="New Lead – Advantage Growth" />
     <input type="hidden" name="_replyto" value="email" />
     <input type="hidden" name="_captcha" value="false" />
