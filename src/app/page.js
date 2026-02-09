@@ -6,36 +6,32 @@
     action="https://formsubmit.co/bhavna.advantagegrowth@gmail.com"
     method="POST"
     onSubmit={(e) => {
-      e.preventDefault();
-
       const form = e.target;
       const name = form.name.value;
       const email = form.email.value;
       const message = form.message.value;
 
-      // Open WhatsApp
       const whatsappMessage = `Hi, I'm ${name}. My email is ${email}. I need help with: ${message}`;
-      window.open(
-        `https://wa.me/917973888374?text=${encodeURIComponent(whatsappMessage)}`,
-        "_blank"
-      );
 
-      // Send email silently
-      fetch(form.action, {
-        method: "POST",
-        body: new FormData(form),
-      });
-
-      alert("Thanks! We’ll contact you shortly.");
-      form.reset();
+      // Open WhatsApp AFTER submit (non-blocking)
+      setTimeout(() => {
+        window.open(
+          `https://wa.me/917973888374?text=${encodeURIComponent(whatsappMessage)}`,
+          "_blank"
+        );
+      }, 300);
     }}
     className="max-w-xl mx-auto space-y-4"
   >
     {/* FormSubmit config */}
-    <input type="hidden" name="_next" value="https://advantagegrowth.in/#contact" />
-    <input type="hidden" name="_subject" value="New Lead – Advantage Growth" />
     <input type="hidden" name="_captcha" value="false" />
     <input type="hidden" name="_template" value="table" />
+    <input type="hidden" name="_subject" value="New Lead – Advantage Growth" />
+    <input
+      type="hidden"
+      name="_next"
+      value="https://advantagegrowth.in/#contact"
+    />
 
     <input
       name="name"
