@@ -13,7 +13,6 @@
 
       const whatsappMessage = `Hi, I'm ${name}. My email is ${email}. I need help with: ${message}`;
 
-      // Open WhatsApp AFTER submit (non-blocking)
       setTimeout(() => {
         window.open(
           `https://wa.me/917973888374?text=${encodeURIComponent(whatsappMessage)}`,
