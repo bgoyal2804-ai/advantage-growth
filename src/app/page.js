@@ -25,11 +25,11 @@ export default function Page() {
       {/* HERO */}
       <section className="bg-gradient-to-r from-slate-900 to-slate-700 text-white py-28 text-center">
         <h1 className="text-5xl font-bold mb-4">
-          We Scale Brands with Performance Marketing
-        </h1>
-        <p className="text-xl mb-8">
-          Meta Ads • Google Ads • Funnels • ROI Focused Growth
-        </p>
+  Performance Marketing Agency Helping Brands Scale Profitably
+</h1>
+        <p className="text-sm text-gray-400 mt-2">
+  Performance Marketing • Meta Ads • Google Ads • Lead Generation
+</p>
         <a
           href="#contact"
           className="bg-orange-500 px-8 py-4 rounded text-lg font-bold"
