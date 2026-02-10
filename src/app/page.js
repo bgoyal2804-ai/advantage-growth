@@ -27,8 +27,8 @@ export default function Page() {
         <h1 className="text-5xl font-bold mb-4">
   Performance Marketing Agency Helping Brands Scale Profitably
 </h1>
-        <p className="text-sm text-gray-400 mt-2">
-  Performance Marketing • Meta Ads • Google Ads • Lead Generation
+        <p className="text-xl mb-8">
+  Meta Ads • Google Ads • Lead Generation • Sales Funnels • ROI-Driven Growth
 </p>
         <a
           href="#contact"
