@@ -6,71 +6,138 @@ export default function Page() {
   return (
     <main className="font-sans">
 
-      {/* HEADER */}
-      <header className="flex justify-between items-center px-10 py-5 border-b">
+      {/* HEADER - Mobile Optimized */}
+      <header className="flex flex-col md:flex-row justify-between items-center px-4 md:px-10 py-4 md:py-5 border-b gap-4">
         <Image
           src="/logo-new.png"
           alt="Advantage Growth"
-          width={160}
-          height={50}
+          width={140}
+          height={45}
           priority
+          className="w-32 md:w-40"
         />
-        <nav className="space-x-6 font-semibold">
-          <a href="#services">Services</a>
-          <a href="#about">About</a>
-          <a href="#contact">Contact</a>
+        <nav className="flex gap-4 md:gap-6 font-semibold text-sm md:text-base">
+          <a href="#services" className="hover:text-orange-500">Services</a>
+          <a href="#about" className="hover:text-orange-500">About</a>
+          <a href="#contact" className="hover:text-orange-500">Contact</a>
         </nav>
       </header>
 
-      {/* HERO */}
-      <section className="bg-gradient-to-r from-slate-900 to-slate-700 text-white py-28 text-center">
-        <h1 className="text-5xl font-bold mb-4">
-  Performance Marketing Agency Helping Brands Scale Profitably
-</h1>
-        <p className="text-xl mb-8">
-  Meta Ads • Google Ads • Lead Generation • Sales Funnels • ROI-Driven Growth
-</p>
+      {/* HERO - Mobile First */}
+      <section className="bg-gradient-to-r from-slate-900 to-slate-700 text-white py-16 md:py-28 px-4 md:px-6 text-center">
+        <h1 className="text-3xl md:text-5xl font-bold mb-4 leading-tight">
+          Performance-Driven Paid Advertising That Delivers Measurable Results
+        </h1>
+        <p className="text-base md:text-xl mb-6 md:mb-8 max-w-3xl mx-auto">
+          We help service-based businesses and growing brands generate consistent leads and sales through Meta and Google Ads—with full transparency and data-backed strategy.
+        </p>
         <a
           href="#contact"
-          className="bg-orange-500 px-8 py-4 rounded text-lg font-bold"
+          className="inline-block bg-orange-500 hover:bg-orange-600 px-6 md:px-8 py-3 md:py-4 rounded text-base md:text-lg font-bold transition"
         >
           Get a Free Strategy Call
         </a>
       </section>
 
-      {/* SERVICES */}
-      <section id="services" className="py-20 px-10">
-        <h2 className="text-4xl font-bold text-center mb-12">Our Services</h2>
-        <div className="grid md:grid-cols-4 gap-6">
+      {/* SERVICES - Mobile Grid */}
+      <section id="services" className="py-12 md:py-20 px-4 md:px-10">
+        <h2 className="text-3xl md:text-4xl font-bold text-center mb-8 md:mb-12">
+          What We Do
+        </h2>
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 md:gap-6 max-w-6xl mx-auto">
           {[
-            "Meta & Google Ads",
-            "Lead Generation",
-            "Sales Funnels",
-            "E-commerce Scaling",
+            {
+              title: "Meta Ads",
+              desc: "Facebook & Instagram campaigns that reach your ideal customers and drive conversions."
+            },
+            {
+              title: "Google Ads",
+              desc: "Search and display campaigns that capture high-intent buyers actively looking for solutions."
+            },
+            {
+              title: "Lead Generation",
+              desc: "Strategic funnels designed to convert traffic into qualified leads and sales."
+            },
+            {
+              title: "Campaign Optimisation",
+              desc: "Continuous testing and refinement to improve performance and lower cost per acquisition."
+            },
           ].map((service) => (
             <div
-              key={service}
-              className="border p-8 rounded-xl text-center font-semibold"
+              key={service.title}
+              className="border border-gray-200 p-6 md:p-8 rounded-xl hover:shadow-lg transition"
             >
-              {service}
+              <h3 className="text-lg md:text-xl font-bold mb-2">{service.title}</h3>
+              <p className="text-sm md:text-base text-gray-600">{service.desc}</p>
             </div>
           ))}
         </div>
       </section>
 
-      {/* ABOUT */}
-      <section id="about" className="bg-gray-100 py-20 px-10 text-center">
-        <h2 className="text-4xl font-bold mb-6">About Advantage Growth</h2>
-        <p className="max-w-3xl mx-auto text-lg">
-          Advantage Growth is a performance-driven digital marketing agency
-          helping startups and brands scale profitably using paid ads,
-          conversion-focused funnels, and data-backed strategies.
-        </p>
+      {/* APPROACH - New Section */}
+      <section className="bg-gray-50 py-12 md:py-20 px-4 md:px-10">
+        <div className="max-w-4xl mx-auto text-center">
+          <h2 className="text-3xl md:text-4xl font-bold mb-6 md:mb-8">
+            Our Approach
+          </h2>
+          <p className="text-base md:text-lg text-gray-700 mb-8 md:mb-10 leading-relaxed">
+            We focus on building advertising systems that support sustainable business growth. Every campaign is guided by clear strategy, precise audience targeting, accurate conversion tracking, and continuous optimisation.
+          </p>
+          
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 md:gap-8 text-left">
+            <div className="bg-white p-6 rounded-lg shadow-sm">
+              <div className="text-3xl mb-3">🎯</div>
+              <h3 className="font-bold text-lg mb-2">Strategy-Led</h3>
+              <p className="text-sm text-gray-600">
+                Every campaign starts with understanding your business objectives and target audience.
+              </p>
+            </div>
+
+            <div className="bg-white p-6 rounded-lg shadow-sm">
+              <div className="text-3xl mb-3">📊</div>
+              <h3 className="font-bold text-lg mb-2">Data-Driven</h3>
+              <p className="text-sm text-gray-600">
+                Decisions backed by accurate tracking, testing, and real performance metrics—not vanity numbers.
+              </p>
+            </div>
+
+            <div className="bg-white p-6 rounded-lg shadow-sm">
+              <div className="text-3xl mb-3">🔄</div>
+              <h3 className="font-bold text-lg mb-2">Continuous Optimisation</h3>
+              <p className="text-sm text-gray-600">
+                Ongoing refinement to improve results and reduce cost per lead or sale.
+              </p>
+            </div>
+          </div>
+        </div>
       </section>
 
-      {/* CONTACT */}
-      <section id="contact" className="py-20 px-6 text-center bg-white">
-        <h2 className="text-4xl font-bold mb-6">Let’s Talk Growth</h2>
+      {/* ABOUT - Updated Copy */}
+      <section id="about" className="py-12 md:py-20 px-4 md:px-10 text-center">
+        <div className="max-w-4xl mx-auto">
+          <h2 className="text-3xl md:text-4xl font-bold mb-6">
+            About AdVantage Growth
+          </h2>
+          <p className="text-base md:text-lg text-gray-700 leading-relaxed mb-6">
+            AdVantage Growth is a performance-driven paid advertising agency focused on helping businesses generate consistent leads and sales through Meta and Google Ads.
+          </p>
+          <p className="text-base md:text-lg text-gray-700 leading-relaxed mb-6">
+            We work with service-based businesses and growing brands that want measurable outcomes from their ad spend—not vanity metrics. Our approach is rooted in clear strategy, precise audience targeting, accurate conversion tracking, and continuous optimisation.
+          </p>
+          <p className="text-base md:text-lg text-gray-700 leading-relaxed">
+            We partner with clients who value clarity, accountability, and results, helping them make smarter decisions with paid advertising.
+          </p>
+        </div>
+      </section>
+
+      {/* CONTACT - Mobile Optimized Form */}
+      <section id="contact" className="py-12 md:py-20 px-4 md:px-6 text-center bg-white">
+        <h2 className="text-3xl md:text-4xl font-bold mb-4 md:mb-6">
+          Let's Talk Growth
+        </h2>
+        <p className="text-gray-600 mb-8 md:mb-10 max-w-2xl mx-auto text-sm md:text-base">
+          Book a free strategy call. We'll discuss your business goals and show you how paid advertising can drive measurable results.
+        </p>
 
         <form
           onSubmit={(e) => {
@@ -91,13 +158,13 @@ export default function Page() {
                 name,
                 email,
                 message,
-                _subject: "New Lead – Advantage Growth",
+                _subject: "New Lead – AdVantage Growth",
                 _captcha: "false",
               }),
             });
 
             // WhatsApp message
-            const whatsappMessage = `Hi, I'm ${name}. My email is ${email}. I need help with: ${message}`;
+            const whatsappMessage = `Hi, I'm ${name}. My email is ${email}. ${message}`;
             window.open(
               `https://wa.me/917973888374?text=${encodeURIComponent(
                 whatsappMessage
@@ -106,7 +173,7 @@ export default function Page() {
               "noopener,noreferrer"
             );
 
-            alert("Thanks! We’ll contact you shortly.");
+            alert("Thanks! We'll contact you shortly.");
             form.reset();
           }}
           className="max-w-xl mx-auto space-y-4"
@@ -116,7 +183,7 @@ export default function Page() {
             name="name"
             required
             placeholder="Your Name"
-            className="w-full border p-3 rounded"
+            className="w-full border-2 border-gray-300 focus:border-orange-500 p-3 md:p-4 rounded-lg outline-none text-base"
           />
 
           <input
@@ -124,44 +191,47 @@ export default function Page() {
             name="email"
             required
             placeholder="Your Email"
-            className="w-full border p-3 rounded"
+            className="w-full border-2 border-gray-300 focus:border-orange-500 p-3 md:p-4 rounded-lg outline-none text-base"
           />
 
           <textarea
             name="message"
             required
-            placeholder="Tell us about your project"
-            className="w-full border p-3 rounded"
+            placeholder="Tell us about your business and goals"
+            className="w-full border-2 border-gray-300 focus:border-orange-500 p-3 md:p-4 rounded-lg outline-none text-base"
             rows="4"
           />
 
           <button
             type="submit"
-            className="bg-black text-white px-8 py-3 rounded font-bold"
+            className="w-full bg-black hover:bg-gray-800 text-white px-6 md:px-8 py-3 md:py-4 rounded-lg font-bold transition text-base md:text-lg"
           >
-            Submit
+            Get Your Free Strategy Call
           </button>
         </form>
       </section>
 
       {/* FOOTER */}
-      <footer className="bg-black text-white py-6 text-center">
-        © 2026 Advantage Growth. All rights reserved.
+      <footer className="bg-black text-white py-6 md:py-8 text-center px-4">
+        <p className="text-sm md:text-base mb-2">© 2026 AdVantage Growth. All rights reserved.</p>
+        <p className="text-xs md:text-sm text-gray-400">
+          Performance-Driven Paid Advertising • Meta Ads • Google Ads • Lead Generation
+        </p>
       </footer>
 
-      {/* FLOATING WHATSAPP */}
+      {/* FLOATING WHATSAPP - Mobile Optimized */}
       <a
         href="https://wa.me/917973888374"
         target="_blank"
         rel="noopener noreferrer"
-        className="fixed bottom-6 right-6 bg-green-500 hover:bg-green-600 text-white p-4 rounded-full shadow-lg z-50"
+        className="fixed bottom-4 right-4 md:bottom-6 md:right-6 bg-green-500 hover:bg-green-600 text-white p-3 md:p-4 rounded-full shadow-lg z-50"
         aria-label="Chat on WhatsApp"
       >
         <svg
           xmlns="http://www.w3.org/2000/svg"
           viewBox="0 0 32 32"
           fill="currentColor"
-          className="w-6 h-6"
+          className="w-6 h-6 md:w-7 md:h-7"
         >
           <path d="M16 2C8.3 2 2 8.3 2 16c0 2.5.7 4.9 1.9 7l-2 6.1 6.3-2c2 1.1 4.3 1.7 6.8 1.7 7.7 0 14-6.3 14-14S23.7 2 16 2z" />
         </svg>
